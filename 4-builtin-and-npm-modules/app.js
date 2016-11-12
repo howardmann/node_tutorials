@@ -10,6 +10,8 @@
 // axios similar to jQuery's $.ajax request helpers
 
 
+// Note: When we commit our changes to git we should delete the node_modules folder and then whenever using in production we can simply run npm install. Otherwise we will be committing thousands of npm files
+
 // Require your dependencies at the beginning
 var _ = require('lodash');
 var axios = require('axios');
