@@ -1,7 +1,7 @@
 // npm scripts
 // In package.json we add a scripts property which accepts a string representing a terminal command, this is similar to our rake tasks in ruby
 // In our example we have a scripts start property which when run 'npm start' will run the command in the terminal
-// Below that we have our
+// Our nodemon package helps listen for changes lie
 /*
 {
   "name": "5-npm-scripts",

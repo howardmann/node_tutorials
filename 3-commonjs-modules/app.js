@@ -2,7 +2,7 @@
 // Stores it as an object in math variable
 var math = require('./math.js');
 
-console.log(math);
+// console.log(math);
 // In terminal run node app will return an object literal from './math.js'
 /*
 { add: [Function: add],
@@ -15,7 +15,12 @@ var a = Number(process.argv[3]);
 var b = Number(process.argv[4]);
 
 // Equivalent to accessing the math object literal and selecting the property variable passed as command which returns a function accepting two arguments (a,b) which we pass from the terminal argv
-var value = math[command](a,b);
+if (math[command] === undefined) {
+  var value = 'command unrecognised'
+} else {
+  var value = math[command](a,b);
+}
+
 
 console.log(value);
 
