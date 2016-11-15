@@ -22,7 +22,7 @@
 
 var math = require('./math');
 
-var addValue = math.add(3,6);
+var addValue = math.add(130,6);
 var subtractValue = math.subtract(3,6);
 var multiplyValue = math.multiply(3,6);
 

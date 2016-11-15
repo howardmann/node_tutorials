@@ -4,10 +4,10 @@ var http = require('http');
 var handlers = require('./handlers.js');
 
 var server = http.createServer(function(request, response){
-  // var headers = request.headers;
-  // var method = request.method;
+  var headers = request.headers;
+  var method = request.method;
   var url = request.url;
-  // console.log(headers, method, url);
+  console.log(headers, method, url);
 
   if (url === "/") {
     handlers.homepage(response);
