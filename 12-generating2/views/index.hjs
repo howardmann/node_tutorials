@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{>header}}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, fugit eligendi doloremque voluptatem perspiciatis illo tempora exercitationem neque eveniet quod voluptatibus dicta itaque voluptates officia. Cumque distinctio eaque, quas quis!<p>
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, voluptatum.</p>
+
+  </body>
+</html>
