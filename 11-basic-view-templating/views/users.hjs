@@ -1,0 +1,22 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  {{> header}}
+  <!-- To access a partial use the syntax {{> property}} -->
+  <hr>
+
+  <!-- To iterate through an array we use the syntax {{#property}}...{{/property}} then within it we access the values by passing in the property variable name -->
+  {{#users}}
+  <ul>
+      <li>{{id}}</li>
+      <li>{{first_name}}</li>
+      <li>{{gender}}</li>
+  </ul>
+  {{/users}}
+
+  {{>footer}}
+</body>
+
+</html>
