@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{>header}}
+    <div class="app">
+      <h2>Let's have coffee</h2>
+      <ul>
+        <li>Phone: {{phone}}</li>
+        <li>Email: {{email}}</li>
+      </ul>
+    </div>
+  </body>
+</html>

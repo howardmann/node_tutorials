@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{>header}}
+
+    <div class="app">
+      <h2>My name is Howie</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur blanditiis sapiente eos officia qui, vel voluptatem expedita nisi quos iusto.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime blanditiis laudantium, quidem dignissimos possimus amet repellendus distinctio. Exercitationem, nobis eius, quidem inventore rerum vitae id odit aliquam omnis repellat eos.
+      </p>
+      <ul>
+        <li>Note 1</li>
+        <li>Note 2</li>
+        <li>Note 3</li>
+      </ul>
+    </div>
+  </body>
+</html>
