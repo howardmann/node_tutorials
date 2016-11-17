@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{>header}}
+    <div class="main">
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }} dynamic view page</p>
+
+    <ul>
+    {{#users}}
+      <li>{{name}} | {{email}} | {{city}} | <a href='/users/{{id}}'>show</a></li>
+    {{/users}}
+    </ul>
+
+    </div>
+    {{>footer}}
+  </body>
+</html>
