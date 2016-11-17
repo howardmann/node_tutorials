@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    {{>header}}
+    <h1>{{ title }}</h1>
+    <p>
+      Name: {{race.name}}
+    </p>
+    <p>
+      Homeworld: {{race.homeworld}}
+    </p>
+
+    <h2>{{race.name}} heroes: </h2>
+    {{#race.heroes}}
+    <p>
+      <a href="/heroes/{{id}}">{{name}}</a>
+    </p>
+    {{/race.heroes}}
+  </body>
+</html>

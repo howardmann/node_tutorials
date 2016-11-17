@@ -7,6 +7,14 @@
   <body>
     {{>header}}
     <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <p>
+      Name: {{hero.name}}
+    </p>
+    <p>
+      Weapon: {{hero.weapon}}
+    </p>
+    <p>
+      Race: <a href="/races/{{hero.race_id}}">{{hero.race.name}}</a> 
+    </p>
   </body>
 </html>

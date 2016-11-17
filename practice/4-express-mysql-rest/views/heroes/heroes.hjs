@@ -7,6 +7,11 @@
   <body>
     {{>header}}
     <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+
+    {{#heroes}}
+      <p>
+        <a href="/heroes/{{id}}">{{name}}</a> 
+      </p>
+    {{/heroes}}
   </body>
 </html>
