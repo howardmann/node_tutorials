@@ -4,16 +4,16 @@ var passport = require('passport');
 var db = require('../config/db.js');
 require('../config/passport.js');
 
-/* Login view and authentication. */
+/* Signup view and authentication. */
 router
   .get('/', function(req, res, next) {
-    res.render('login', {
+    res.render('signup', {
       message: req.flash('message')
     });
   })
-  .post('/', passport.authenticate('local-login', {
+  .post('/', passport.authenticate('local-signup', {
     successRedirect: '/',
-    failureRedirect: '/login',
+    failureRedirect: '/signup',
     failureFlash: true
   }))
 

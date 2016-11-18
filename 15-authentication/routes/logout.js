@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var db = require('../db.js');
-require('../passport.js');
+var db = require('../config/db.js');
+require('../config/passport.js');
 
 /* Logout post request. Destrory session id and redirect back to root page */
 router
