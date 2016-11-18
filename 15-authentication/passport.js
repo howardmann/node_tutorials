@@ -1,6 +1,8 @@
+var bcrypt = require('bcrypt-nodejs');
 var db = require('./db.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+
 
 // Create an authenticate method. Refer passport.js docs for examples not worth remembering. Note that if fail callback should say return done(null, false), if success then return done(null, user)
 var authenticate = function(email, password, done){
@@ -8,7 +10,7 @@ var authenticate = function(email, password, done){
     .where("email", email)
     .first()
     .then(user => {
-      if (!user || user.password !== password) {
+      if (!user || !bcrypt.compareSync(password, user.password)) {
         return done(null, false, {message: 'invalid email or password'});
       }
       return done(null, user)
