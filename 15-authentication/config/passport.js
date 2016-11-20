@@ -57,9 +57,6 @@ passport.use('local-signup', new LocalStrategy({
   })
 );
 
-
-
-
 // If successfully authenticated this will store the users id as a cookie session. This is equivalent in rails as session[:id] = user.id
 passport.serializeUser(function(user, done) {
   done(null, user.id);

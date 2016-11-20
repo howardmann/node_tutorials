@@ -10,9 +10,7 @@ var flash    = require('connect-flash');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var login = require('./routes/login');
-var logout = require('./routes/logout');
-var signup = require('./routes/signup');
+var authRoutes = require('./routes/auth');
 
 var app = express();
 
@@ -40,10 +38,10 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+// Namespacing the first argument heps create a subdomain prefix for our users routes. For example we could change it to say /profiles here if we wanted
 app.use('/users', users);
-app.use('/login', login);
-app.use('/logout', logout);
-app.use('/signup', signup);
+// To not have a named root path, we can access our express.Routes file by just passing in the variable as an argument
+app.use(authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
