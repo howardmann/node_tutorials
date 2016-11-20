@@ -18,6 +18,7 @@ router
   }))
   .get('/logout', function(req, res, next) {
     req.logout();
+    req.flash('message', 'Succesfully logged out');
     res.redirect('/');
   })
   .get('/signup', function(req, res, next) {

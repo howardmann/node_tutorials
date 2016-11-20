@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="minimal-ui, width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="row">
+            <div class="col col-6">
+              <a href="/">
+                <span class="logo"><img src="/images/pesteco_logo.png" /></span>
+              </a>
+            </div>
+            <div class="col col-6 right">
+              <span class="user-login">
+                {{#if user}}
+                  <a href="/logout">Logout</a>
+                {{else}}
+                  <a href="/login">Login</a> |
+                  <a href="/signup">Signup</a>
+                {{/if}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <div class="container">
+        <!-- Yield app -->
+        <div class="row">
+          <div class="col col-12">
+            {{saved.name}}
+            {{{body}}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col sm-col-6 col-4">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col sm-col-6 col-4">
+            <h4>Documents</h4>
+            <ul>
+              <li><a href="/certification">Certification</a></li>
+              <li><a href="/insurance">Insurance</a></li>
+            </ul>
+          </div>
+          <div class="col sm-col-12 col-4">
+            <h4>Clients</h4>
+            <ul>
+              {{#if user}}
+                <li><a href="/logout">Logout</a></li>
+              {{else}}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 right">
+          <div class="container">
+          <small>Website designed and coded by <a href="https://au.linkedin.com/in/howard-mann-17450933" target="_blank">Howie Mann</a></small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  </body>
+</html>

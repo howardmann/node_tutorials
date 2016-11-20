@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var knex = require('../config/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send({
-    session: req.session,
-    user: req.user,
-    authenticated: req.isAuthenticated()
+  res.render('index', {
+    title: 'Express'
   });
+
 });
 
 module.exports = router;

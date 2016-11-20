@@ -15,7 +15,7 @@ passport.use('local-login', new LocalStrategy({
         if (!user || !bcrypt.compareSync(password, user.password)){
           return done(null, false, req.flash('message', 'Invalid email or password'));
         }
-        return done(null, user)
+        return done(null, user, req.flash('message', 'Succesfully logged in'))
       }, done)
   }
 ));
@@ -46,7 +46,7 @@ passport.use('local-signup', new LocalStrategy({
           .insert(newUser)
           .then(ids => {
             newUser.id = ids[0];
-            return done(null, newUser);
+            return done(null, newUser, req.flash('message', 'Succesfully created'));
           }, done)
       }, done)
   }
