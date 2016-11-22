@@ -7,8 +7,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Require npm packages for authentication
 var session = require("express-session");
+var RedisStore = require('connect-redis')(session)
 var passport = require('passport');
 var flash    = require('connect-flash');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -24,20 +26,19 @@ app.engine('hbs', require('express-handlebars')({extname: 'hbs', defaultLayout: 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ======PASSPORT AND SESSIONS MIDDLEWARE========
-app.use(session({secret: "i love dogs", resave: false, saveUnitialized: false}));
+app.use(session({store: new RedisStore(), secret: "i love dogs", resave: false, saveUnitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(session());
-
 
 // ===Custom setting res.locals to objects accessible across all views. Best apply this to our application.layout file. Remember to put after session
 app.use(function (req, res, next) {
@@ -48,15 +49,15 @@ app.use(function (req, res, next) {
    next();
 });
 
-app.use(cookieParser());
+// ===SASS MIDDLEWARE===
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   debug: true,
   outputStyle: 'compressed'
 }));
-app.use(express.static(path.join(__dirname, 'public')));
 
+// ===ROUTES===
 app.use('/', index);
 app.use('/users', users);
 app.use(pagesRoutes);
